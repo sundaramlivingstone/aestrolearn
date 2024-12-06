@@ -1,0 +1,157 @@
+:root {
+  --primary-color: #232323;
+  --secondary-color: #758e4f;
+  --background-color: #fff;
+  --text-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.about {
+  position: relative;
+  top: 3.5em;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  background-color: var(--background-color);
+  box-sizing: border-box;
+}
+
+.about_hr {
+  padding: 0 5%;
+  margin-bottom: 2.5rem;
+}
+
+.about_hr h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  width: 100%;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.about_hr h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background-color: var(--secondary-color);
+}
+
+.about_m {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mission_img,
+.mission_p {
+  flex: 1;
+  width: 100%;
+  max-width: 50%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission_img img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  object-fit: cover;
+}
+
+.mission_p {
+  padding: 2.5rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission_p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--secondary-color);
+}
+
+/* Hover effects */
+.mission_img:hover,
+.mission_p:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .about_hr {
+    text-align: start;
+  }
+
+  .about_m {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .mission_img,
+  .mission_p {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .about_hr {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .about_hr h1 {
+    font-size: 2rem;
+  }
+
+  .about_m {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .mission_img,
+  .mission_p {
+    max-width: 100%;
+  }
+}
+
+/* Accessibility and print styles */
+@media print {
+  .about {
+    min-height: auto;
+    background: white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,66 @@
+---
+import './Header.css';
+---
+
+<header class="header">
+  <div class="logo">
+    <a href="#home" data-menu-close>
+      MyWebsite
+    </a>
+  </div>
+  <nav class="navbar" data-navbar>
+    <a href="#qSec" data-menu-close>
+      About Us
+    </a>
+    <a href="#updateSec" data-menu-close>
+      Events
+    </a>
+    <a href="#contact" data-menu-close>
+      Contact Us
+    </a>
+    <div class="join join-mobile">
+      <a href="#joinSec" data-menu-close>
+        Join Us
+      </a>
+    </div>
+  </nav>
+  <div class="join join-desktop">
+    <a href="#joinSec">Join Us</a>
+  </div>
+  <div class="menu-toggle" data-menu-toggle>
+    <i class="fa-solid fa-bars"></i>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('[data-navbar]');
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const menuCloseItems = document.querySelectorAll('[data-menu-close]');
+    const menuIcon = menuToggle.querySelector('i');
+
+    const toggleMenu = () => {
+      navbar.classList.toggle('open');
+      
+      if (navbar.classList.contains('open')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    };
+
+    const closeMenu = () => {
+      navbar.classList.remove('open');
+      menuIcon.classList.remove('fa-xmark');
+      menuIcon.classList.add('fa-bars');
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    menuCloseItems.forEach(item => {
+      item.addEventListener('click', closeMenu);
+    });
+  });
+</script>

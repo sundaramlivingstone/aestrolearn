@@ -1,0 +1,90 @@
+---
+import './Voices.css';
+import Per1 from "../assets/per1.jpg"
+import Per2 from "../assets/per2.jpg"
+import Per3 from "../assets/per3.jpg"
+import Per4 from "../assets/per4.jpg"
+import { Image } from 'astro:assets';
+---
+
+<section id="about" class="voices">
+      <div class="voices_h">
+        <h1>Voices</h1>
+      </div>
+      <div class="voice_stats">
+        <div class="stat">
+          <h2>14</h2>
+          <p>Years Strong</p>
+        </div>
+        <div class="stat">
+          <h2>5000</h2>
+          <p>Lives Changed</p>
+        </div>
+        <div class="stat">
+          <h2>100+</h2>
+          <p>Awareness Campaigns</p>
+        </div>
+      </div>
+      <div class="voice_pers">
+        <div class="persionOne persion">
+          <div class="perProfile">
+            <div class="perImg">
+              <Image src={Per1} alt="Per1" />
+            </div>
+            <div class="perName">
+              <h3>Persion One</h3>
+            </div>
+          </div>
+          <div class="perAbout">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            urna nec dui tristique euismod. Integer at nisl ac orci finibus
+            malesuada.
+          </div>
+        </div>
+        <div class="persionTwo persion">
+          <div class="perProfile">
+            <div class="perImg">
+              <Image src={Per2} alt="Per2" />
+            </div>
+            <div class="perName">
+              <h3>Persion Two</h3>
+            </div>
+          </div>
+          <div class="perAbout">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            urna nec dui tristique euismod. Integer at nisl ac orci finibus
+            malesuada.
+          </div>
+        </div>
+        <div class="persionThree persion">
+          <div class="perProfile">
+            <div class="perImg">
+              <Image src={Per3} alt="Per3" />
+            </div>
+            <div class="perName">
+              <h3>Persion Three</h3>
+            </div>
+          </div>
+          <div class="perAbout">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            urna nec dui tristique euismod. Integer at nisl ac orci finibus
+            malesuada.
+          </div>
+        </div>
+        <div class="persionFour persion">
+          <div class="perProfile">
+            <div class="perImg">
+              <Image src={Per4} alt="Per4" />
+            </div>
+            <div class="perName">
+              <h3>Persion Four</h3>
+            </div>
+          </div>
+          <div class="perAbout">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            urna nec dui tristique euismod. Integer at nisl ac orci finibus
+            malesuada.
+          </div>
+        </div>
+      </div>
+    </section>

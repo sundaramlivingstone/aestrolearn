@@ -1,0 +1,77 @@
+---
+import './Updates.css';
+import updatePic1 from "../assets/updatePic1.jpg";
+import updatePic2 from "../assets/updatePic2.jpg";
+import updatePic3 from "../assets/updatePic3.jpg";
+import updatePic4 from "../assets/updatePic4.jpg";
+import updatePic5 from "../assets/updatePic5.jpg";
+
+// Interface definition for the updates
+interface UpdateItem {
+  img: string;
+  title: string;
+  date: string;
+  description: string;
+}
+
+// Props with default empty updates array
+interface Props {
+  updatesData?: UpdateItem[];
+}
+
+// Astro.props destructuring
+const { updatesData = [] }: Props = Astro.props;
+
+// Default updates if no data is provided
+const defaultUpdates: UpdateItem[] = [
+  {
+    img: updatePic1,
+    title: "Exciting Product Launch",
+    date: "December 2024",
+    description: "We're thrilled to announce our latest product that will revolutionize the industry."
+  },
+  {
+    img: updatePic2,
+    title: "Company Milestone",
+    date: "November 2024",
+    description: "Celebrating our achievements and looking forward to new opportunities."
+  },
+  {
+    img: updatePic3,
+    title: "Innovation Breakthrough",
+    date: "October 2024",
+    description: "Our team has made significant progress in developing cutting-edge solutions."
+  },
+  {
+    img: updatePic4,
+    title: "Community Impact",
+    date: "September 2024",
+    description: "Proud to share our latest community engagement and social responsibility initiatives."
+  },
+  {
+    img: updatePic5,
+    title: "Upcoming Event",
+    date: "January 2025",
+    description: "Join us for an exciting event filled with insights and opportunities."
+  }
+];
+
+// Use provided updates or fallback to default
+const displayUpdates = updatesData.length > 0 ? updatesData : defaultUpdates;
+---
+
+<section class="updateSec section" id="updateSec">
+  <h1>Latest Buzz and Updates</h1>
+  <div class="updates-container">
+    {displayUpdates.map((update, index) => (
+      <div class="update-card" key={index}>
+        <!-- Ensure the img src uses static paths -->
+        <img src={update.img} alt={update.title} loading="lazy" />
+        <h3>{update.title}</h3>
+        <p class="date">{update.date}</p>
+        <p class="description">{update.description}</p>
+        <button class="read-button">Read More</button>
+      </div>
+    ))}
+  </div>
+</section>

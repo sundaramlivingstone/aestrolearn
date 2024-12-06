@@ -1,0 +1,66 @@
+---
+import './Question.css';
+
+interface QuestionItem {
+  question: string;
+  answer: string;
+}
+
+const questions: QuestionItem[] = [
+  {
+    question: "What do we actually do?",
+    answer: "We provide solutions for...",
+  },
+  {
+    question: "How long have we been active?",
+    answer: "We have been active for...",
+  },
+  {
+    question: "How can I get involved?",
+    answer: "You can get involved by...",
+  },
+  { 
+    question: "What impact have we made?", 
+    answer: "Our impact includes..." 
+  },
+  {
+    question: "Where can I find more info?",
+    answer: "More information can be found...",
+  }
+];
+---
+
+<section class="qSec section" id="qSec">
+  <h1>Your Burning Questions Answered</h1>
+  <div class="questions">
+    {questions.map((q, index) => (
+      <div 
+        class="question" 
+        data-index={index}
+      >
+        <h3>{q.question}</h3>
+        <p class="answer">{q.answer}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = document.querySelectorAll('.question');
+    
+    questions.forEach((question, index) => {
+      question.addEventListener('click', () => {
+        // Toggle active class on clicked question
+        question.classList.toggle('active');
+        
+        // Close other open questions
+        questions.forEach((q, i) => {
+          if (i !== index) {
+            q.classList.remove('active');
+          }
+        });
+      });
+    });
+  });
+</script>

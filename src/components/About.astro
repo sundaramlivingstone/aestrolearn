@@ -1,0 +1,26 @@
+---
+import './About.css';
+import img from "../assets/mission.jpg"
+import { Image } from 'astro:assets';
+---
+
+<section id="about" class="about">
+      <div class="about_hr">
+        <h1>
+          Our Mission <br /> Matter
+        </h1>
+      </div>
+      <div class="about_m">
+        <div class="mission_p">
+          lorem30 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Dolor, odit nam exercitationem quaerat modi iste necessitatibus, quas
+          iusto nostrum adipisci alias eaque optio aperiam culpa? Quis sed,
+          cumque molestias porro, earum esse sequi ullam iste harum possimus
+          ipsum voluptas aut ducimus error, ad repellendus veniam reprehenderit
+          sit? Eaque, recusandae laborum!
+        </div>
+        <div class="mission_img">
+          <Image src={img} alt="Mission" />
+        </div>
+      </div>
+    </section>
