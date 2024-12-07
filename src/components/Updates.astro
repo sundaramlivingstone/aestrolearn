@@ -5,6 +5,7 @@ import updatePic2 from "../assets/updatePic2.jpg";
 import updatePic3 from "../assets/updatePic3.jpg";
 import updatePic4 from "../assets/updatePic4.jpg";
 import updatePic5 from "../assets/updatePic5.jpg";
+import { Image } from 'astro:assets';
 
 // Interface definition for the updates
 interface UpdateItem {
@@ -25,31 +26,31 @@ const { updatesData = [] }: Props = Astro.props;
 // Default updates if no data is provided
 const defaultUpdates: UpdateItem[] = [
   {
-    img: updatePic1,
+    img: updatePic1.src,
     title: "Exciting Product Launch",
     date: "December 2024",
     description: "We're thrilled to announce our latest product that will revolutionize the industry."
   },
   {
-    img: updatePic2,
+    img: updatePic2.src,
     title: "Company Milestone",
     date: "November 2024",
     description: "Celebrating our achievements and looking forward to new opportunities."
   },
   {
-    img: updatePic3,
+    img: updatePic3.src,
     title: "Innovation Breakthrough",
     date: "October 2024",
     description: "Our team has made significant progress in developing cutting-edge solutions."
   },
   {
-    img: updatePic4,
+    img: updatePic4.src,
     title: "Community Impact",
     date: "September 2024",
     description: "Proud to share our latest community engagement and social responsibility initiatives."
   },
   {
-    img: updatePic5,
+    img: updatePic5.src,
     title: "Upcoming Event",
     date: "January 2025",
     description: "Join us for an exciting event filled with insights and opportunities."
